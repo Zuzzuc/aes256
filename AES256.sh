@@ -1,5 +1,6 @@
 #!/bin/bash
 # Author Zuzzuc https://github.com/Zuzzuc/
+# Does not work when path contains spaces. Will fix soon
 ws=/tmp/$RANDOM && mkdir $ws && cd $ws
 TRG=$1 && SRC=$1
 if [ "$1" != "" ];then
@@ -20,8 +21,6 @@ if [ "$1" != "" ];then
 			TRG="$ws/$TRG"
 			mkdir "$1"
 			unzip -o -qq "$(basename $TRG)" -d "$(cd $1 && cd .. && pwd)"
-		else
-			echo "FAIL, its ..$(awk 'FNR == 1 { print; exit }' $TRG).."
     	fi
 		sleep 5
 	else
