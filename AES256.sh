@@ -30,7 +30,6 @@ else
 			unzip -o -qq "DEC" -d "DEC.d"
 			mv "DEC.d/${TRUESRC##*/}" "$TRUESRC"
 		else
-			rm -rf "$TRUESRC"
 			mv "DEC" "$TRUESRC"
 		fi
 	fi
