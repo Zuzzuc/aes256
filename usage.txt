@@ -1,3 +1,3 @@
-Usage is "(path to script)" inputfile outputfile task password", example of usage :
-”${BASH_SOURCE[0]} input.txt encrypted.txt enc password”
-Where ${BASH_SOURCE[0]} is the file path, input.txt is the input file, encrypted.txt is the output, enc is the mode(can be enc(encrypt) or dec(decrypt), and password is the passoword."
+Usage is "(path to script)" file mode password", example of usage :
+~/Desktop/aes256.sh file.txt enc password”
+Where ~/Desktop is the encrypter file path, file.txt is the file to change, enc is the mode(can be enc(for encrypt) or dec(for decrypt), and password is the password to encrypt the file with."
