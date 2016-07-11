@@ -28,7 +28,7 @@ else
 		rm -rf "$TRUESRC"
 		if [[ $(head -1 "DEC" | grep -q "PK" && echo "isDir") == "isDir" ]];then
 			unzip -o -qq "DEC" -d "DEC.d"
-			mv "DEC.d/${TRUESRC##*/}" "$TRUESRC"
+			mv "DEC.d/$F_NAME" "$TRUESRC"
 		else
 			mv "DEC" "$TRUESRC"
 		fi
