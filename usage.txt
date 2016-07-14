@@ -1,4 +1,4 @@
 Usage is "(path to script)" file mode password, example of usage :
 ~/Desktop/aes256.sh "file.txt" enc password
 Where ~/Desktop is the encrypter file path, file.txt is the file to change, enc is the mode(can be enc(for encrypt) or dec(for decrypt), and password is the password to encrypt the file with.
-It's recommended to quote all file paths or there might occour problems when the path contains spaces.
+It's recommended to quote all file paths or there will occour problems when either of the two paths contains spaces.
