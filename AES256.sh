@@ -1,5 +1,5 @@
 #!/bin/bash
-# License: MIT
+# License: The MIT License (MIT)
 # Author Zuzzuc https://github.com/Zuzzuc/
 ws=/tmp/$RANDOM && mkdir $ws && cd $ws
 SRC=$1 && TRUESRC=$(echo "$1" | sed 's%\\%%g') && TRUESRC=$(echo "$TRUESRC" | sed -e 's%[[:space:]]*$%%')
