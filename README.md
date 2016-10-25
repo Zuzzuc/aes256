@@ -7,7 +7,7 @@ This small script can encrypt and decrypt files and folders using aes-256-cbc. T
 ### This scripts generates a easy to use shell executable in a local directory, by default as ".command". 
 This script will not log to bash history, meaning the password will not be stored. Also it's faster than executing aes256 because it passes some arguments on to AES256.sh by itself<br><br>
 This file is used to generate a file that can encrypt and decrypt files on one press, all that this will requite is file path(if mode is set to generic), mode to launch aes256 with (eg enc or dec) and password to encrypt or decrypt file with.
-Usage will be ./KeyLockGen.sh "generic or static" "path to AES256.sh" "Output file. eg KeyLock.sh" "(If $1 is static, otherwise leave empty)/path/to/file/or/dir" 
+Usage will be ($0)./KeyLockGen.sh ($1)"generic or static" ($2)"path to AES256.sh" ($3)"Output file. eg KeyLock.sh" ($4)"(If $1 is static, otherwise leave empty)/path/to/file/or/dir" 
 If $1 is generic, no file path should be specified. KeyLock.command will ask for file to change each time it is executed.
 If $1 on the other hand is static, a file path must be specified.
 $2 should always be path to aes256.sh.
