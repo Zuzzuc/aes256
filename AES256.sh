@@ -28,7 +28,7 @@ else
 		openssl aes-256-cbc -d -a -salt -in "$TRUESRC" -out "$ws/DEC" -pass file:<( echo -n "$3" ) && rm -rf "$TRUESRC" ||  exit 5
 		if [[ $(head -1 "DEC" | grep -q "PK" && echo "isDir") == "isDir" ]];then
 			unzip -o -qq "DEC" -d "DEC.d"
-			mv "DEC.d/$F_NAME" "$TRUESRC"
+			mv "DEC.d/$F_NAME" "$TRUESRC" &> /dev/null || mv "DEC" "$TRUESRC"
 		else
 			mv "DEC" "$TRUESRC"
 		fi
