@@ -27,8 +27,9 @@ fi
 of=""
 if [ "$3" != "" ];then
 	of="$(SC "$3")"
-	if [ -d "$of" ];then
+	if [ää -d "$of" ];then
 		of="$of/KeyLock.command"
+		
 	fi
 else
 	echo 'Output file is not set.'
@@ -37,22 +38,15 @@ fte=""
 if [ "$mode" == "static" ];then
 	fte="$(SC "$4")"
 fi
-
-# Build executable
 touch "$of"
-echo -e '#!/bin/bash' > "$of" #Need to be single quoted, otherwise it will fail because bash thinks '#!' is magic.
-# Init phase
+echo -e '#!/bin/bash' > "$of"
 if [ "$mode" == "static" ];then
 	echo -en "f=\"$fte\";" >> "$of"
 	echo -e 'echo "This lock has a locked filepath at $f"' >> "$of"
 elif [ "$mode" == "generic" ];then
 	echo -en "echo \"Enter path to file to encrypt/decrypt\"\nread -p \"File:\" f;" >> "$of"
 fi
-# Main init
-# Variable init
 echo -en "e=\"$fta\"\n" >> "$of"
-# Other
 echo -e 'if [ ! -f "$e" ];then\n	echo "AES256.sh not found!";exit 1\nfi' >> "$of"
-# Info gather
 echo -en 'echo "What mode would you like to execute AES256.sh with?"\nread -p "mode:" m\necho "Enter file password";read -sp "Password:" p\necho "Working"...\nexec "$e" "$f" "$m" "$p"\necho "Done"' >> "$of"
 chmod u+x "$of"
