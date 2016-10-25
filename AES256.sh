@@ -25,8 +25,7 @@ else
 			mv "$ws/enc" "$TRUESRC"
 		fi
 	elif [ "$2" == "dec" ];then
-		openssl aes-256-cbc -d -a -salt -in "$TRUESRC" -out "$ws/DEC" -pass file:<( echo -n "$3" )
-		rm -rf "$TRUESRC"
+		openssl aes-256-cbc -d -a -salt -in "$TRUESRC" -out "$ws/DEC" -pass file:<( echo -n "$3" ) && rm -rf "$TRUESRC" ||  exit 5
 		if [[ $(head -1 "DEC" | grep -q "PK" && echo "isDir") == "isDir" ]];then
 			unzip -o -qq "DEC" -d "DEC.d"
 			mv "DEC.d/$F_NAME" "$TRUESRC"
