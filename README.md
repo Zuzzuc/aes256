@@ -16,7 +16,7 @@ $4 Is the path to the file to edit. This is required if $1 is static, leave blan
 
 
 ## Examples
-This will generate a KeyLock thats static (~/Desktop/StaticDirOrFile) on ~/Desktop/KeyLock. If no output file name is specified, but a directory is, it will create the executable under $3/KeyLock.command
+This will generate a KeyLock that is static (~/Desktop/StaticDirOrFile) on ~/Desktop/KeyLock. If no output file name is specified, but a directory is, it will create the executable under $3/KeyLock.command
 `KeyLockGen "static" "~/Library/Scripts/AES256.sh" "~/Desktop" "~/Desktop/StaticDirOrFile"`
 <br><br>
 Generic file( it will ask what file to edit once every launch) created on ~/Desktop/ShellExecutable.command
