@@ -27,9 +27,8 @@ fi
 of=""
 if [ "$3" != "" ];then
 	of="$(SC "$3")"
-	if [ää -d "$of" ];then
+	if [ -d "$of" ];then
 		of="$of/KeyLock.command"
-		
 	fi
 else
 	echo 'Output file is not set.'
@@ -48,5 +47,5 @@ elif [ "$mode" == "generic" ];then
 fi
 echo -en "e=\"$fta\"\n" >> "$of"
 echo -e 'if [ ! -f "$e" ];then\n	echo "AES256.sh not found!";exit 1\nfi' >> "$of"
-echo -en 'echo "What mode would you like to execute AES256.sh with?"\nread -p "mode:" m\necho "Enter file password";read -sp "Password:" p\necho "Working"...\nexec "$e" "$f" "$m" "$p"\necho "Done"' >> "$of"
+echo -en 'echo "What mode would you like to execute AES256.sh with?"\nread -p "mode:" m\necho "Enter file password";read -sp "Password:" p\necho -e "\\nWorking"...\nexec "$e" "$f" "$m" "$p"\necho "Done"' >> "$of"
 chmod u+x "$of"
