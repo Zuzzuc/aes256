@@ -3,6 +3,19 @@ Bash File Encrypter
 
 This small script can encrypt and decrypt files and folders using aes-256-cbc. The usage is simple, `./AES256.sh "file to modify" mode password` For more info see usage.txt
 
+## Examples
+Encrypting a file named "Somefile.txt" in the desktop directory with the password "pass"
+<br>
+`./AES256.sh "~/Desktop/Somefile.txt" enc pass`
+<br><br>
+Decrypting the same file
+<br>
+`./AES256.sh "~/Desktop/Somefile.txt" "dec" "pass"`
+<br><br>
+Encrypting a directory named "dir" in the desktop directory with the password "pass"
+<br>
+`./AES256.sh "~/Desktop/dir" "enc" "pass"`
+
 # KeyLockGen
 ### This scripts generates a easy to use shell executable in a local directory, by default as ".command". 
 This script will not log to bash history, meaning the password will not be stored. Also it's faster than executing aes256 because it passes some arguments on to AES256.sh by itself<br><br>
