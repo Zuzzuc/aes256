@@ -17,7 +17,7 @@ else
 		fi
 		mv "$TRUESRC" ./ 
 		if [[ F_IS_DIR -eq 1 ]];then
-			zip -rq -1 "$F_NAME".zip "$F_NAME"
+			zip -rqy -1 "$F_NAME".zip "$F_NAME"
 			openssl aes-256-cbc -a -salt -in "$ws/$F_NAME.zip" -out "$ws/enc" -pass file:<( echo -n "$3" )
 			mv "$ws/enc" "$TRUESRC"
 		else
